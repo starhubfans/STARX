@@ -17,15 +17,8 @@ html, body {
 .page {
   width: 100%;
   max-width: 480px;
-  margin: 0 auto;
+  margin: auto;
   background: #000;
-}
-
-/* TOP BANNER */
-.banner {
-  display: flex;
-  justify-content: center;
-  padding: 10px 0;
 }
 
 /* VIDEO */
@@ -38,19 +31,16 @@ video {
   max-height: 75vh;
   object-fit: contain;
   display: block;
+  background: #000;
 }
 
-/* 300 BANNER */
+/* BANNER */
 .banner-300 {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0 30px;
+  padding: 25px 0 35px;
   width: 100%;
-}
-
-.banner-300 iframe {
-  max-width: 100%;
 }
 </style>
 </head>
@@ -59,8 +49,6 @@ video {
 
 <div class="page">
 
-<script src="https://lentattire.com/40/8c/dc/408cdc1afc5bae7a044ae4013c8c1e87.js"></script>
-
   <!-- VIDEO -->
   <div class="video-box">
     <video id="player" controls muted playsinline preload="metadata">
@@ -68,7 +56,7 @@ video {
     </video>
   </div>
 
-  <!-- 300x250 BANNER -->
+  <!-- BANNER 300x250 -->
   <div class="banner-300">
 <script>
   atOptions = {
@@ -84,8 +72,12 @@ video {
 
 </div>
 
+<!-- POPUNDER -->
+<script src="https://lentattire.com/40/8c/dc/408cdc1afc5bae7a044ae4013c8c1e87.js"></script>
+
 <script>
 (function () {
+
   const params = new URLSearchParams(window.location.search);
   let video = params.get("v");
 
@@ -97,8 +89,12 @@ video {
     video = "https://cdn.videy.co/QCY4wUNX1.mp4";
   }
 
-  document.getElementById("videoSource").src = video;
-  document.getElementById("player").load();
+  const player = document.getElementById("player");
+  const source = document.getElementById("videoSource");
+
+  source.src = video;
+  player.load();
+
 })();
 </script>
 
